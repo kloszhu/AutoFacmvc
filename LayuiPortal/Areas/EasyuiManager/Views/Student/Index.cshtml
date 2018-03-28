@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="easyui-tabs-content">
+    <div class="datagrid-content">
+        <table class="easyui-datagrid-test"></table>
+    </div>
+    <div id="tb">
+        <a href="#" class="easyui-linkbutton" onclick="$('.easyui-datagrid-test').edatagrid('addRow')" data-options="iconCls:'icon-save',plain:true"></a>
+        <a href="#" class="easyui-linkbutton" data-options="iconCls:'icon-help',plain:true"></a>
+    </div>
+</div>
+
+<script>
+    $('.easyui-datagrid-test').edatagrid({
+        toolbar: '#tb',
+            url: '/EasyuiManager/Student/GetList',
+            saveUrl: '/EasyuiManager/Student/Save',
+            updateUrl: '/EasyuiManager/Student/Save',
+            destroyUrl:'/EasyuiManager/Student/Delete'
+});
+</script>

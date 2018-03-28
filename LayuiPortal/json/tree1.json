@@ -1,0 +1,67 @@
+﻿[
+	{
+		"id": 1,
+		"text": "我的文档",
+		"children": [
+			{
+				"id": 11,
+				"text": "EditGrid",
+				"state": "closed",
+				"children": [
+          {
+            "id": 111,
+            "text": "EditIndex",
+            "url": "/Config/EditGrid/EditIndex"
+          },
+          {
+            "id": 112,
+            "text": "可编辑",
+            "url": "/EasyuiManager/Student/Index"
+          }, {
+						"id": 113,
+						"text": "Company",
+						"url": "tab.html"
+					}
+				]
+			}, {
+				"id": 12,
+				"text": "Program Files",
+				"children": [
+					{
+						"id": 121,
+						"text": "Intel",
+						"url": "tab.html"
+					}, {
+						"id": 122,
+						"text": "Java",
+						"attributes": {
+							"p1": "Custom Attribute1",
+							"p2": "Custom Attribute2"
+						}
+					}, {
+						"id": 123,
+						"text": "Microsoft Office",
+						"url": "tab.html"
+					}, {
+						"id": 124,
+						"text": "Games",
+						"checked": true,
+						"url": "tab.html"
+					}
+				]
+			}, {
+				"id": 13,
+				"text": "index.html",
+				"url": "tab.html"
+			}, {
+				"id": 14,
+				"text": "about.html",
+				"url": "tab.html"
+			}, {
+				"id": 15,
+				"text": "welcome.html",
+				"url": "tab.html"
+			}
+		]
+	}
+]

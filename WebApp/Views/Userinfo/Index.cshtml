@@ -1,0 +1,78 @@
+﻿@model PagedList.IPagedList<Models.System.C_UserInfo>
+@using PagedList.Mvc;
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<p>
+    @Html.ActionLink("创建", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           主键
+        </th>
+        <th>
+           创建时间
+        </th>
+        <th>
+          更新时间
+        </th>
+        <th>
+          创建者
+        </th>
+        <th>
+           用户信息
+        </th>
+        <th>
+          用户code
+        </th>
+        <th>
+        登录名
+        </th>
+        <th>
+        密码
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item._id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserInfoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserInfoCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoginName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.ActionLink("修改", "Edit", new { id = item._id }) |
+                @Html.ActionLink("明细", "Details", new { id = item._id }) |
+                @Html.ActionLink("删除", "Delete", new { id = item._id })
+            </td>
+        </tr>
+    }
+
+</table>
+每页 @Model.PageSize 条记录，共 @Model.PageCount 页，当前第 @Model.PageNumber 页
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }))

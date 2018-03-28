@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+    ViewBag.Title = "Index";
+}
+
+<div class="easyui-tabs-content">
+    <div class="search-box easyui-panel" data-options="title:'查询条件'">
+        <input class="easyui-textbox" data-options="prompt:'Item ID'" />
+        <input class="easyui-textbox" data-options="prompt:'Product'" />
+        <input class="easyui-textbox" data-options="prompt:'List Price'" />
+        <a class="easyui-linkbutton"><i class="fa fa-search"></i> 查询</a>
+        <a class="easyui-linkbutton"><i class="fa fa-rotate-left"></i> 重置</a>
+        <a class="easyui-linkbutton">高级查询 <i class="fa fa-angle-double-down"></i></a>
+    </div>
+    <div class="datagrid-content">
+        <table class="easyui-datagrid-test"></table>
+    </div>
+</div>
+<script>
+    //$.get("/EasyuiManager/Config/DataGrid", function (data) {
+    //    var options = data;
+    //    console.info(options);
+    //    $('.easyui-datagrid-test').datagrid(options);
+    //})
+    var option = { "title": "数据表格1", "fit": true, "singleSelect": false, "collapsible": true, "url": "/EasyuiManager/Config/GetAllTree", "method": "get", "fitColumns": true, "pagination": true, "columns": [[{ "field": "id", "title": "id", "width": 80 }, { "field": "text", "title": "text", "width": 80 }, { "field": "url", "title": "url", "width": 80 }]], "toolbar": [{ "text": "刷新", "iconCls": "icon-reload" }, { "text": "添加", "iconCls": "icon-add" }, { "text": "修改", "iconCls": "icon-edit" }] };
+    $('.easyui-datagrid-test').datagrid(option);
+</script>
+
